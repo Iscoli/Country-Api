@@ -41,7 +41,7 @@ import Spinner from '../Components/Spinner';
       <div className="row-contain">
         <div className="row-container">
        {  RegionDAta === '' ?<div className="error-p"><p>{`Network Error. Unable to fetch list of countries in ${params.regionName} `} </p><span className="error-h"><h2>Reload page!</h2></span></div> :  RegionDAta.filter((item)=>{
-       return  SearchcountryData.toLowerCase() === '' ? item : item.name.common.toLowerCase().includes( SearchcountryData)
+       return  SearchcountryData === '' ? item : item.name.common.includes( SearchcountryData) 
      }).map((item,index)=>(
       <Link    className={`text-Link${theme}`}  key={index} to={`/country/${item.name.common}?`}>
           <LisitingItems key={index} item={item}/> 
