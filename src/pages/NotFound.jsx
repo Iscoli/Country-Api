@@ -1,6 +1,6 @@
 
 function NotFound(){
-  return <> Page Not Found</>
+  return <div className="not-found"> Page Not Found</div >
 }
 
 

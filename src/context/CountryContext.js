@@ -25,6 +25,7 @@ export const CountryContextProvider = ({children})=>{
     CountryName: [],
     AlphaData:[],
     loading:false,
+
   }
 
   const [state, dispatch] = useReducer(CountryContextReducers, initialState)
@@ -138,12 +139,21 @@ export const CountryContextProvider = ({children})=>{
 
 
     // Search  filter Users
-
+    // const texty = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()
   
+
+    // const texty =  text.toLowerCase().split(' ').map((word)=>word.charAt(0).toUpperCase() + text.slice(1).toLowerCase().join(' '));
     const SearchCountries=((text)=>{
+     
+      const texty =  text
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
       dispatch({
         type: "SEARCH-COUNTRY-DATA",
-        payload:text,
+        payload:texty,
        })
       
     })
