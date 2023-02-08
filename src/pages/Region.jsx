@@ -28,9 +28,7 @@ import Spinner from '../Components/Spinner';
          
       
 
-         if(loading){
-          return <Spinner />
-        }
+        
         return ( <div>
          
         
@@ -39,7 +37,7 @@ import Spinner from '../Components/Spinner';
         <UserSearch />
        <DropDown />
        </div>
-       
+      {loading ? <Spinner /> : 
       <div className="row-contain">
         <div className="row-container">
        {  RegionDAta.filter((item)=>{
@@ -50,7 +48,8 @@ import Spinner from '../Components/Spinner';
           </Link>
        ))}
        </div>
-       </div>
+       </div>}
+     
       </div>
 
     )}

@@ -8,9 +8,7 @@
     function Home(){
       const {loading} = useContext(CountryContext)
       
-      if(loading){
-        return <Spinner />
-      }
+     
       return ( <div>
         <div className="Regional-container">
           <div className="Regional-flex">
@@ -23,11 +21,12 @@
       </div>
       </div>
       </div>
-       <div className="row-contain">
+      {loading ? <Spinner /> :   <div className="row-contain">
         <div className="row-container">
         <Listings />
         </div>
-        </div>
+        </div>}
+     
       
       </div>
     )}

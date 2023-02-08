@@ -21,7 +21,7 @@
       
 
      { CountryDAta.filter((item)=>{
-       return  SearchcountryData.toLowerCase() === '' ? item : item.name.common.toLowerCase().includes( SearchcountryData)
+       return  SearchcountryData.toLowerCase() === '' ? item : item.name.common.toLowerCase().includes( SearchcountryData) ||  item.name.common.toUpperCase().includes( SearchcountryData)
      }).map((item,index)=>(
           <Link   className={`text-Link${theme}`} key={index} to={`/country/${item.name.common}?`}>
             
@@ -30,6 +30,6 @@
       ))}
       
        </>
-    }
+    } 
 
     export default Listings

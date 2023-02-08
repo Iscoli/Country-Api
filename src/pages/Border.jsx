@@ -3,9 +3,9 @@ import CountryContext from '../context/CountryContext';
 import {  useParams } from 'react-router-dom';
 import {useEffect} from 'react';
 import CountryListings from "../Data/CountryListings";
-import Arrow from '../assets/svg/arrow-left-icon.svg';
 import {Link}from 'react-router-dom';
 import Spinner from "../Components/Spinner"; 
+import { ArrowLeft } from 'react-bootstrap-icons';
 
 function Border(){
 
@@ -23,20 +23,16 @@ function Border(){
 
 
 
-   
-    if(loading){
-      return <Spinner />
-    }
+  
     return (<div>
       
      <div className= 'backButton'>
         
-          <Link  className={ theme === 'light' ? {Color:"hsl(0, 0%, 100%)"} : {Color: " hsl(209, 23%, 22%)"}} to='/'>
-          <button className={theme == 'light' ? 'back-btn white-btn' : 'back-btn  black-btn  '}> <img  className='arrow'  src={Arrow} alt='Arrow'/>Back</button>
-          </Link>
+            <Link  className={ theme === 'light' ? {Color:"hsl(0, 0%, 100%)"} : {Color: " hsl(209, 23%, 22%)"}} to='/'>
+            <button className={theme == 'light' ? 'back-btn white-btn' : 'back-btn  black-btn  '}>  <ArrowLeft  className="ml-5" />Back</button>
+            </Link>
         </div> 
-        
-      <div className="country-containers">
+        {loading ? <Spinner /> :  <div className="country-containers">
          
          { AlphaData.map((item,index)=>(
        
@@ -44,7 +40,7 @@ function Border(){
       <CountryListings key={index} item={item} />
       
     ))}
-          </div>
+          </div>} 
          </div>
 )}
 

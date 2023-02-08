@@ -25,19 +25,17 @@
 
 
   
-      if(loading){
-        return <Spinner />
-      }
+     
       return  <div>
-       
+        
        <div className= 'backButton'>
           
             <Link  className={ theme === 'light' ? {Color:"hsl(0, 0%, 100%)"} : {Color: " hsl(209, 23%, 22%)"}} to='/'>
             <button className={theme == 'light' ? 'back-btn white-btn' : 'back-btn  black-btn  '}>  <ArrowLeft  className="ml-5" />Back</button>
             </Link>
           </div> 
-          
-        <div className="country-containers">
+          {loading ? <Spinner /> :    
+           <div className="country-containers">
            
            {CountryName.map((item,index)=>(
          
@@ -45,7 +43,8 @@
         <CountryListings key={index} item={item} />
         
       ))}
-            </div>
+            </div> }  
+    
            </div>
   }
 
