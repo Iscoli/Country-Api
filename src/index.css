@@ -252,16 +252,17 @@ code {
     border:none;
   }
     
-    @media (max-width:500px) {
+    @media (max-width:550px) {
       .Regional-flex{
         flex-direction: column;
         padding-top: 30px;
-        
+        margin-left:5px;
+        margin-right: 5px;
       }
       .dropdown{
         margin-top:40px;
         align-items: flex-start;
-        
+        margin-right: 100px;
       }
 
     }
@@ -588,4 +589,14 @@ code {
           }
         }
 
-                
+      
+        .error-p{
+          font-size: 13px;
+          padding: 10px; 
+        }
+
+
+
+        .error-h{
+          color:red;
+        }

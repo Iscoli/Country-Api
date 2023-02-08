@@ -78,7 +78,7 @@
             <div className="borders"><span className="border-btn">{borders ? borders.map((border,index)=>{
                 
            return <Link  key={index}  to={`/Alpha/${border}`}><button  className={ theme === 'light' ? 'white-btn btn-country' : 'black-btn btn-country'}  key={index}>{border}</button></Link>
-                 }) : <p className="no-border  ptag-boder">shares No border</p>}
+                 }) : <p className="no-border  ptag-boder">Shares No Border</p>}
                 
                  </span>
                  </div>

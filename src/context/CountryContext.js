@@ -25,7 +25,6 @@ export const CountryContextProvider = ({children})=>{
     CountryName: [],
     AlphaData:[],
     loading:false,
-
   }
 
   const [state, dispatch] = useReducer(CountryContextReducers, initialState)

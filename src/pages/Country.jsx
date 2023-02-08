@@ -3,10 +3,8 @@
   import {  useParams } from 'react-router-dom';
   import {useEffect} from 'react'
   import CountryListings from "../Data/CountryListings";
-  import Arrow from '../assets/svg/arrow-left-icon.svg'
   import {Link}from 'react-router-dom'
   import Spinner from "../Components/Spinner";
-  import { ArrowRight } from 'react-bootstrap-icons';
   import { ArrowLeft } from 'react-bootstrap-icons';
 
   function Country(){
@@ -20,6 +18,7 @@
 
       useEffect(()=>{
         getCountryName(params.countryName)
+        // eslint-disable-next-line
       },[])
 
 
@@ -31,13 +30,13 @@
        <div className= 'backButton'>
           
             <Link  className={ theme === 'light' ? {Color:"hsl(0, 0%, 100%)"} : {Color: " hsl(209, 23%, 22%)"}} to='/'>
-            <button className={theme == 'light' ? 'back-btn white-btn' : 'back-btn  black-btn  '}>  <ArrowLeft  className="ml-5" />Back</button>
+            <button className={theme === 'light' ? 'back-btn white-btn' : 'back-btn  black-btn  '}>  <ArrowLeft  className="ml-5" />Back</button>
             </Link>
           </div> 
           {loading ? <Spinner /> :    
            <div className="country-containers">
            
-           {CountryName.map((item,index)=>(
+           {CountryName === '' ? <div className="error-p"><p>Network Error. Unable to fetch more information about the  country.</p><span className="error-h"><h2>Reload page!</h2></span></div>: CountryName.map((item,index)=>(
          
         
         <CountryListings key={index} item={item} />
